@@ -1,4 +1,5 @@
 import { Component, inject } from "@angular/core";
+import { SubscribeService } from "src/app/services/subscribe.service";
 
 @Component({
   selector: "app-hero",
@@ -6,11 +7,7 @@ import { Component, inject } from "@angular/core";
 })
 export class HeroComponent {
   onSubscribe() {
-    console.log("Subscribe button in header is clicked");
-    // Add user to the db
-    // Send email with subscription detail
-    // Allow user to access the services
-
-    alert("Thank you for subscribing. You can access the services Now!");
+    let subService = new SubscribeService();
+    subService.onSubscribeClicked("Yearly");
   }
 }
