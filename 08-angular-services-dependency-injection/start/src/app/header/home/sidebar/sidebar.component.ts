@@ -3,11 +3,11 @@ import { SubscribeService } from "src/app/services/subscribe.service";
 
 @Component({
   selector: "app-sidebar",
-  templateUrl: "./sidebar.component.html",
+  templateUrl: "./sidebar.component.html"
 })
 export class SidebarComponent {
+  constructor(private subService: SubscribeService){}
   onSubscribe() {
-    let subService = new SubscribeService();
-    subService.onSubscribeClicked("daily");
+    this.subService.onSubscribeClicked("daily");
   }
 }

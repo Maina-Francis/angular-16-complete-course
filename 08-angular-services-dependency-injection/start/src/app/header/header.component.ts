@@ -6,6 +6,8 @@ import { SubscribeService } from "../services/subscribe.service";
   templateUrl: "./header.component.html",
 })
 export class HeaderComponent {
+  constructor(private subService: SubscribeService) {}
+
   selectedTab: string = "home";
 
   //When HOME Link is clicked
@@ -19,7 +21,6 @@ export class HeaderComponent {
   }
 
   onSubscribe() {
-    let subService = new SubscribeService();
-    subService.onSubscribeClicked('monthly');
+    this.subService.onSubscribeClicked("monthly");
   }
 }
